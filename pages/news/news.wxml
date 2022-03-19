@@ -1,0 +1,28 @@
+<view class="newsBox" bindtap="hideContent">
+  <view class="title">{{news.title}}</view>
+  <view class="userBox">
+    <view class="user">
+      <image src="{{news.portrait}}"></image>
+      <view class="author">作者：{{news.userName}}</view>
+    </view>
+    <view class="time">发布时间：{{news.startTime}}</view>
+  </view>
+  <rich-text class="rich-text" space="emsp" nodes="{{news.content}}"></rich-text>
+</view>
+
+<!-- 菜单 -->
+
+<view class="fixBox" bindtap="{{ stopBtn ? 'showContent' : 'hideContent' }}"
+  style="width:{{width}}rpx;height:{{height}}rpx;transition:width 1s;-moz-transition:width 1s;-webkit-transition:width 1s;-o-transition:width 1s;">
+  <view wx:if="{{choose}}" class='companyInfo' animation='{{animationData}}'>
+    <view class="{{isCollect==true?'fixItmeActive':'fixItme'}}" bindtap="collect">收藏</view>
+    <view class="fixItme">
+      分享
+      <button open-type="share" class="btShare"> </button>
+    </view>
+    <navigator url="/pages/wirte/write" class="fixItme">投稿</navigator>
+  </view>
+  <view wx:else>
+    菜单
+  </view>
+</view>

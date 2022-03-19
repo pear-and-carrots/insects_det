@@ -1,0 +1,352 @@
+page {
+  background-color: #F0F8E4;
+  padding-top: 70rpx;
+}
+
+.return image {
+  width: 40rpx;
+  height: 40rpx;
+  margin: 10rpx;
+}
+
+.return {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 40rpx;
+  text-align: center;
+  background-color: rgb(236, 90, 82);
+  border: 4rpx solid rgb(179, 22, 8);
+  color: white;
+  padding: 10rpx;
+  width: 200rpx;
+  margin-bottom: 40rpx;
+  margin-left: 30rpx;
+  border-radius: 10rpx;
+  font-size: 28rpx;
+}
+
+.head_item {
+  width: 374rpx;
+  text-align: center;
+  font-size: 40rpx;
+  font-weight: 550;
+  color: #999;
+  letter-spacing: 0;
+}
+
+.head_itemActive {
+  /* color: #197791; */
+  color: #fff;
+  background-color: #85BE30;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  border-bottom-left-radius: 100rpx;
+  border-bottom-right-radius: 100rpx;
+  border: 30rpx solid #F0F8E4;
+}
+
+.head {
+  width: 100%;
+  height: 80rpx;
+  background-color: #F0F8E4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* position: fixed; */
+  top: 420;
+  /* z-index: 10; */
+}
+
+.box {
+  margin: 40rpx;
+  padding: 20rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+  box-shadow: 15rpx 15rpx 15rpx 15rpx #dbf1c0;
+}
+
+.inputBox {
+  padding: 10rpx;
+  margin-bottom: 20rpx;
+  background-color: #F8FCF1;
+  border: 1rpx solid #BCE085;
+  border-radius: 20rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.input {
+  width: 67%;
+  background-color: #fff;
+  border: 1rpx solid rgb(231, 227, 227);
+  border-radius: 10rpx;
+  padding: 10rpx;
+}
+
+.btn {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+}
+
+.button {
+  margin-top: 20rpx;
+  background-color: #85BE30;
+  color: #fff;
+  border-radius: 50rpx;
+}
+
+/* 昆虫库列表 */
+
+.library {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1rpx solid #89c037;
+  padding-bottom: 20rpx;
+  margin: 20rpx;
+}
+
+.libImg {
+  width: 25%;
+  height: 150rpx;
+  border-radius: 10rpx;
+}
+
+.libminiBox {
+  width: 75%;
+  padding-left: 20rpx;
+}
+
+.libText {
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  font-size: 30rpx;
+}
+
+.libArea {
+  color: #666666;
+  font-size: 28rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+/* 管理端 */
+.stuList {
+  width: 92%;
+  margin-right: 2%;
+  margin-left: 2%;
+  margin-top: 2%;
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  align-items: center;
+  background-color: #fff;
+  padding: 15rpx;
+  border-radius: 20rpx;
+  border-bottom: 1rpx solid #c1e788;
+}
+
+.stuList image {
+  width: 15%;
+  height: 60rpx;
+  border-radius: 100%;
+  background-color: khaki;
+  overflow: hidden;
+  margin-right: 20rpx;
+}
+
+.textareaText {
+  text-align: left;
+  width: 85%;
+  font-size: 28rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.images_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-box {
+  border-bottom: 1px solid #000;
+  color: #ccc;
+  font-size: 320rpx;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border: 5rpx;
+  border-color: rgba(0, 0, 0, 0.452);
+  width: 250rpx;
+  height: 250rpx;
+  margin-left: 32rpx;
+  position: relative;
+  background-color: #fff;
+  padding: 10rpx;
+  border-radius: 10rpx;
+  align-items: center;
+  justify-content: center;
+}
+
+.setImg {
+  width: 250rpx;
+  height: 250rpx;
+}
+
+/* 删除图片 */
+.img-delect {
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  position: absolute;
+  right: -20rpx;
+  top: -20rpx;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10rpx;
+}
+
+/* 蒙版 */
+.mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  z-index: 9000;
+  opacity: 0.7;
+}
+
+.buttonBox {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.modalDlg {
+  width: 580rpx;
+  height: 600rpx;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  z-index: 9999;
+  margin: -370rpx 85rpx;
+  background-color: #fff;
+  border-radius: 36rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.close_mask {
+  color: #fff;
+  padding: 10rpx;
+  margin-top: 20rpx;
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 100%;
+  position: relative;
+  left: 39%;
+  font-size: 45rpx;
+  background-color: #578611;
+  text-align: center;
+  line-height: 31rpx;
+}
+
+
+.mbox {
+  margin-top: 20rpx;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+}
+
+
+
+.reduce {
+  width: 100rpx;
+  padding: 10rpx;
+  border-radius: 40rpx;
+  background-color: #FE642E;
+  color: #fff;
+  text-align: center;
+  margin-left: 220rpx;
+  margin-right: -90rpx;
+}
+
+/*弹窗结束 */
+
+.pagebut {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 40rpx;
+  font-size: 35rpx;
+}
+
+.next {
+  margin-left: 50rpx;
+}
+
+.last {
+  margin-right: 50rpx;
+}
+
+.pagebut image {
+  width: 40rpx;
+  height: 40rpx;
+  margin: 40rpx;
+}
+
+/* 页数跳转 */
+.inputPage{
+  width: 40rpx;
+  border-radius: 10rpx;
+  padding: 8rpx;
+  border: 1rpx solid #c1e788;
+  color: #446317;
+  text-align: center;
+  background-color: rgb(242, 247, 242);
+  margin-left: 8rpx;
+  margin-right: 8rpx;
+}
+
+.tt{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.tiao{
+  margin-top: -50rpx;
+  font-size: 32rpx;
+  color: #666666;
+  margin-bottom: 20rpx;
+}
+
+.allpages{
+  margin-top: -70rpx;
+  font-size: 24rpx;
+  margin-bottom: 50rpx;
+}

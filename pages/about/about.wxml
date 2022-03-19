@@ -1,0 +1,101 @@
+<view class="{{isLight==true?'page':''}}">
+<view class="my_message{{isLight == true?'Active':''}}">
+  <view class="my_message_top">
+    <view class="user_img">
+      <open-data type="userAvatarUrl"></open-data>
+      <!-- <image src="../../images/个人资料1.png" wx:if="{{avatarUrl == ''}}" mode="widthFix"></image>
+      <image src="{{avatarUrl}}" class="denglu" wx:if="{{avatarUrl != ''}}" mode="widthFix"></image> -->
+    </view>
+    <view class="user_name">
+      <open-data class="{{isLight == true?'userName':''}}" type="userNickName"></open-data>
+      <text bindtap="getUserInfo" wx:if="{{nickName == ''}}">点击登录</text>
+      <text style="font-weight:800" wx:if="{{nickName != ''}}">{{nickName}}</text>
+      <view class="name">
+        <image src="cloud://lepidopter-0g4j22528dbb9f25.6c65-lepidopter-0g4j22528dbb9f25-1305965341/icon/签名.png"
+          style="width:50rpx;height:50rpx">
+        </image>
+        <input class="Ninput{{isLight == true?'Active':''}}" placeholder="个性签名" wx:if="{{isInput == true}}" bindblur="input" bindfocus="input"
+          confirm-type="done" value="{{input}}" />
+        <view style="font-weight:700" bindtap="inputt" wx:if="{{isInput == false}}">{{input}}</view>
+      </view>
+    </view>
+
+    <!-- 日历 -->
+    <view class="calendar">
+      <image src="cloud://lepidopter-0g4j22528dbb9f25.6c65-lepidopter-0g4j22528dbb9f25-1305965341/icon/日历.png"></image>
+      <view class="day" wx:if="{{nl == 2}}">{{day}}</view>
+      <view class="day" wx:if="{{nl == 1}}" style="margin-left:35rpx">{{day}}</view>
+      <view class="month">{{month}}<text style="font-size:20rpx">月</text></view>
+    </view>
+
+  </view>
+  <!-- 萤火虫开关 -->
+  <firefly class="firefly" bind:isLight="isLight"></firefly>
+
+  <view class="weatherBox">
+    <view class="Wbox1">
+      <view class="c1">{{weatherData.city.data}}</view>
+      <view class="c2">{{weatherData.temperature.data}}℃</view>
+      <view class="c3">{{weatherData.winddirection.data}} {{weatherData.windpower.data}}</view>
+      <view class="c3">{{weatherData.humidity.text}} {{weatherData.humidity.data}}</view>
+      <view class="c4">{{weatherData.weather.data}}</view>
+    </view>
+    <view class="Wbox2">
+      <view class="box1">
+        <view class="box11">{{weather.daily[0].name}} {{weather.daily[0].level}}</view>
+        <view class="box12">{{weather.daily[0].text}}</view>
+      </view>
+      <view class="box2">
+        <view class="box21">{{weather.daily[1].name}} {{weather.daily[1].level}}</view>
+        <view class="box22">{{weather.daily[1].text}}</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- <view class="line{{isLight == true?'Active':''}}"></view> -->
+
+<view class="projectBox">
+  <navigator url="../wirte/write" class="project"
+    style="background-color:#e7f0fd;box-shadow:3rpx 3rpx 3rpx 3rpx #99c9f5;color:#1c5488">
+    <view>创作投稿</view>
+    <image class="projectImg1"
+      src="cloud://lepidopter-0g4j22528dbb9f25.6c65-lepidopter-0g4j22528dbb9f25-1305965341/icon/文章.png" />
+    <image class="projectImg2"
+      src="cloud://lepidopter-0g4j22528dbb9f25.6c65-lepidopter-0g4j22528dbb9f25-1305965341/icon/右箭头 (1).png"></image>
+  </navigator>
+  <navigator url="../collect/collect" class="project"
+    style="background-color:#fdf0e7;box-shadow:3rpx 3rpx 3rpx 3rpx #f5bf99;color:#f1720a">
+    <view>我的收藏</view>
+    <image class="projectImg1"
+      src="cloud://lepidopter-0g4j22528dbb9f25.6c65-lepidopter-0g4j22528dbb9f25-1305965341/icon/经验反馈.png" />
+    <image class="projectImg2"
+      src="cloud://lepidopter-0g4j22528dbb9f25.6c65-lepidopter-0g4j22528dbb9f25-1305965341/icon/右箭头 (1).png"></image>
+  </navigator>
+  <navigator url="../history/history" class="project">
+    <view>昆虫足迹</view>
+    <image class="projectImg1"
+      src="cloud://lepidopter-0g4j22528dbb9f25.6c65-lepidopter-0g4j22528dbb9f25-1305965341/icon/书虫icon.png" />
+    <image class="projectImg2"
+      src="cloud://lepidopter-0g4j22528dbb9f25.6c65-lepidopter-0g4j22528dbb9f25-1305965341/icon/右箭头 (1).png"></image>
+  </navigator>
+  <navigator url="../message/message" class="project"
+    style="background-color:#ffffe9;box-shadow:3rpx 3rpx 3rpx 3rpx #D6D65C;color:rgb(124, 53, 53)">
+    <view style="color:#B88A00">意见反馈</view>
+    <image class="projectImg1"
+      src="cloud://lepidopter-0g4j22528dbb9f25.6c65-lepidopter-0g4j22528dbb9f25-1305965341/icon/反馈.png" />
+    <image class="projectImg2"
+      src="cloud://lepidopter-0g4j22528dbb9f25.6c65-lepidopter-0g4j22528dbb9f25-1305965341/icon/右箭头 (1).png"></image>
+  </navigator>
+  <navigator class="project" url="../login/login"
+    style="background-color:rgb(252, 245, 245);box-shadow:3rpx 3rpx 3rpx 3rpx rgb(218, 213, 213);color:rgb(124, 53, 53)">
+    <view style="color:#660000">退出登录</view>
+    <image class="projectImg1"
+      src="cloud://lepidopter-0g4j22528dbb9f25.6c65-lepidopter-0g4j22528dbb9f25-1305965341/icon/退出.png" />
+    <image class="projectImg2"
+      src="cloud://lepidopter-0g4j22528dbb9f25.6c65-lepidopter-0g4j22528dbb9f25-1305965341/icon/右箭头 (1).png"></image>
+  </navigator>
+</view>
+
+<loading wx:if="{{loading}}"></loading>
+</view>

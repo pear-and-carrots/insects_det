@@ -1,0 +1,267 @@
+page {
+  background-color: #eff3ef;
+  height: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.head_item1 {
+  width: 374rpx;
+  text-align: center;
+  font-size: 40rpx;
+  font-weight: 550;
+  color: #999;
+  letter-spacing: 0;
+}
+
+.head_itemActive1 {
+  color: #fff;
+  background-color: #85BE30;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  border-bottom-left-radius: 100rpx;
+  border-bottom-right-radius: 100rpx;
+  border: 30rpx solid #F0F8E4;
+}
+
+.head1 {
+  width: 110%;
+  height: 80rpx;
+  background-color: #F0F8E4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  top: 420;
+}
+
+.title {
+  font-size: 50rpx;
+  color: #6d8165;
+  font-weight: 900;
+  text-align: center;
+  /* margin-left: -10rpx; */
+  margin: 40rpx;
+}
+
+.img {
+  width: 200rpx;
+  height: 200rpx;
+  align-items: center;
+  margin-left: 35%;
+  z-index: 1000;
+}
+
+.realImg {
+  width: 400rpx;
+  height: 400rpx;
+  margin-left: 23%;
+}
+
+.tool {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50rpx;
+  padding-left: 20%;
+  padding-right: 20%;
+  color: #6d8165;
+  font-size: 28rpx;
+  font-weight: 580;
+}
+
+.listBox {
+  width: 92%;
+  margin: 4%;
+}
+
+.swiper {
+  width: 100%;
+  height: 400rpx;
+  border-radius: 20rpx;
+}
+
+.swImg {
+  width: 100%;
+  border-radius: 20rpx;
+}
+
+.listDetail {
+  padding: 40rpx;
+  margin-top: 20rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+  box-shadow: 5rpx 5rpx 5rpx 5rpx #f1eee4;
+}
+
+.ld {
+  padding: 10rpx;
+  margin-top: 10rpx;
+  border-bottom: 1rpx dotted #e4dac0;
+  font-size: 28rpx;
+}
+
+.searchBox {
+  font-size: 28rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: -560rpx;
+  margin-bottom: -105rpx;
+}
+
+.searchImg {
+  width: 80rpx;
+  height: 80rpx;
+  /* margin-bottom: 15rpx; */
+}
+
+.pBox {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20rpx;
+}
+
+.progress {
+  width: 50%;
+}
+
+.ptext {
+  font-size: 25rpx;
+  font-weight: 650;
+  color: #5f8b0c;
+  width: 50%;
+}
+
+.pvBox {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+/* 昆虫栏 */
+.head {
+  width: 100%;
+  height: 80rpx;
+  background-color: #e4dac0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 50rpx;
+  border-radius: 40rpx;
+}
+
+/* .headtext{
+  writing-mode:tb-rl;
+  font-size: 35rpx;
+  height: 150rpx;
+  background-color: #5f8b0c;
+  color: #fff;
+  text-align: center;
+} */
+
+.head_item {
+  width: 374rpx;
+  text-align: center;
+  font-size: 35rpx;
+  font-weight: 550;
+  color: #999;
+  letter-spacing: 0;
+  padding: 20rpx;
+  border-radius: 40rpx;
+}
+
+.head_itemActive {
+  /* color: #197791; */
+  color: #FFF;
+  background-color: #85BE30;
+  text-align: center;
+  padding: 20rpx;
+  border-radius: 40rpx;
+}
+
+/* 修剪图片 */
+.body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.stage {
+  flex-grow: 1;
+}
+
+
+.bar {
+  height: 80rpx;
+  padding: 36rpx;
+  display: flex;
+  flex-direction: row;
+  background-color: black;
+}
+
+.btn {
+  position: relative;
+  flex-grow: 1;
+  border: 2rpx solid grey;
+  line-height: 80rpx;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  font-size: 32rpx;
+}
+
+.btn-cancel {
+  border-top-left-radius: 40rpx;
+  border-bottom-left-radius: 40rpx;
+  background-color: #fff;
+  opacity: 0.8;
+}
+
+.btn-submit {
+  border-top-right-radius: 40rpx;
+  border-bottom-right-radius: 40rpx;
+  background-color: #fff;
+  opacity: 0.8;
+}
+
+.lookPictureBox{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lookPictureBox image{
+  border-radius: 10rpx;
+  margin-bottom: 50rpx;
+  width: 100%;
+}
+
+.lookText{
+  width: 250rpx;
+  text-align: center;
+  font-size: 26rpx;
+  color: #666666;
+  background-color: #e4dac0;
+  border-radius: 10rpx;
+  padding: 10rpx;
+  margin-bottom: 15rpx;
+  
+}
+
+.canvas{
+  margin-top: -600rpx;
+  /* position: fixed; */
+  position: absolute;
+  width: 100%;
+  height: 150%;
+}
+
+.box{
+  position: relative;
+  z-index: 100;
+}

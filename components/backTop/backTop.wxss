@@ -1,0 +1,17 @@
+.back-top{
+  position: fixed;
+  right: 30rpx;
+  bottom: 10rpx;
+  padding-top: 20rpx;
+  padding-bottom: 20rpx;
+  padding-left: 15rpx;
+  padding-right: 15rpx;
+  border-radius: 100%;
+  background-color: rgb(200, 223, 192);
+  opacity: 0.8;
+}
+.back-top image{
+  width: 100rpx;
+  height: 100rpx;
+  margin-bottom: -20rpx;
+}

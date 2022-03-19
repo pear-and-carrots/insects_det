@@ -1,0 +1,145 @@
+page {
+  background: #e3ebe3;
+  padding-top: 230rpx;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  background: #fff;
+  padding: 16rpx 26rpx;
+  color: #666666;
+  margin-bottom: 20rpx;
+  text-emphasis-color: #666666;
+  width: 94%;
+}
+
+.search {
+  background: #e3ebe3;
+  border-radius: 12rpx;
+  padding: 10rpx;
+  /* display: flex;
+  flex-direction: row;
+  align-items: center; */
+}
+
+.searchPutIN {
+  font-size: 28rpx;
+  background-color: #fff;
+  padding: 10rpx;
+  width: 95%;
+  height: 100%;
+  border-radius: 10rpx;
+  margin: 10rpx;
+}
+
+.search image {
+  margin-left: 20rpx;
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.none {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #666666;
+  font-size: 30rpx;
+}
+
+/* 昆虫库列表 */
+.library {
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  border-bottom: 2rpx solid #b5c4a1;
+  border-radius: 20rpx;
+  padding-bottom: 30rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  padding-top: 30rpx;
+  align-items: center;
+  margin: 20rpx;
+}
+
+.libImg {
+  height: 110rpx;
+  width: 130rpx;
+  border-radius: 10rpx;
+}
+
+.libminiBox {
+  width: 80%;
+  padding-left: 20rpx;
+}
+
+.libText {
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  font-size: 30rpx;
+}
+
+.libArea {
+  color: #666666;
+  font-size: 28rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+/* 推荐 */
+.recommend {
+  margin-left: 3%;
+  margin-right: 3%;
+  background-color: #fff;
+  border-radius: 10rpx;
+  box-shadow: 1rpx 1rpx 1rpx 1rpx #b5c4a1;
+  padding: 20rpx;
+}
+
+.title {
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+  margin-bottom: 30rpx;
+  font-size: 35rpx;
+  font-weight: 700;
+  color: #344b13;
+}
+
+.recommendWord {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-right: 10rpx;
+  padding-left: 10rpx;
+  padding-bottom: 25rpx;
+  padding-top: 20rpx;
+  margin: 10rpx;
+  border-bottom: 1rpx dashed #b5c4a1;
+  font-size: 28rpx;
+}
+
+.recommendWord .index {
+  font-size: 24rpx;
+  width: 30rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  margin-right: 25rpx;
+  background-color: #ebe9e3;
+  text-align: center;
+  font-size: 24rpx;
+  padding: 5rpx;
+  border-radius: 100%;
+}
+
+.recommendWord .name{
+  width: 95%;
+}
+
+.recommendWord image{
+  width: 5%;
+}

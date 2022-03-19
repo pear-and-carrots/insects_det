@@ -1,0 +1,44 @@
+<!-- 搜索 -->
+<view class="header">
+  <view class="search">
+    <picker bindchange="bindpicker" class="searchPutIN" range="{{array}}">
+      <text wx:if="{{id == 5}}">请选择关键字类型</text>
+      <view>{{array[id]}}</view>
+    </picker>
+    <input confirm-type="search" data-params="pestName" wx:if="{{id == 0}}" value="{{name}}" class="searchPutIN" type="text" focus
+      placeholder="请输入您想查询昆虫的名称" bindinput="searchInput"></input>
+    <input confirm-type="search" data-params="genusName" wx:if="{{id == 1}}" class="searchPutIN" type="text" focus
+      placeholder="请输入您想查询昆虫的属" bindinput="searchInput"></input>
+    <input confirm-type="search" data-params="sectionName" wx:if="{{id == 2}}" class="searchPutIN" type="text" focus
+      placeholder="请输入您想查询昆虫的科" bindinput="searchInput"></input>
+    <input confirm-type="search" data-params="orderName" wx:if="{{id == 3}}" class="searchPutIN" type="text" focus
+      placeholder="请输入您想查询昆虫的目" bindinput="searchInput"></input>
+  </view>
+</view>
+
+<!-- 搜索的内容列表 -->
+<!-- 使用 -->
+<view wx:for="{{list}}" wx:if="{{list != 1}}" wx:key="index" class="library">
+  <image class="libImg" src="{{item.picture}}"></image>
+  <view class="libminiBox" data-id="{{item.id}}" data-pestId="{{item.pestId}}" data-page="{{pages}}"
+    bindtap="getIntoListDeatil">
+    <view class="libText">{{item.pestName}}</view>
+    <view class="libArea">{{item.distribution}}</view>
+  </view>
+</view>
+
+<!-- 推荐 -->
+<view class="recommend" wx:if="{{list === 1}}">
+  <view class="title">他们在搜...</view>
+  <view class="recommendWord" wx:for="{{recommendList}}" data-pestid="{{item.pestid}}" data-id="0" data-name="{{item.name}}" bindtap="getIntoListDeatil">
+    <view class="index" style="background-color:{{item.backgroundColor}};color:{{item.color}}">{{index + 1}}</view>
+    <view class="name">{{item.name}}</view>
+    <image mode="widthFix" src="cloud://lepidopter-0g4j22528dbb9f25.6c65-lepidopter-0g4j22528dbb9f25-1305965341/icon/右箭头 (1).png">
+    </image>
+  </view>
+</view>
+
+<view class="none" wx:if="{{list.length == 0}}">
+  <image src="cloud://lepidopter-0g4j22528dbb9f25.6c65-lepidopter-0g4j22528dbb9f25-1305965341/icon/无结果.png"></image>
+  <view style="font-size:26rpx">- 昆虫库数据待添加 -</view>
+</view>

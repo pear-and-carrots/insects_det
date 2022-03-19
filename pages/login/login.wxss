@@ -1,0 +1,133 @@
+page{
+ background-color: #F0F8E4;
+ /* margin-top: 100rpx; */
+ overflow: hidden;
+}
+
+.background{
+  opacity: 0.9;
+}
+
+.loginBox{
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: -1150rpx;
+  height: 800rpx;
+  background-color: aliceblue;
+  border-radius: 30rpx;
+  box-shadow:5rpx 5rpx 5rpx 5rpx aliceblue;
+  opacity: 0.8;
+}
+
+.loginBox1{
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: -900rpx;
+  height: 800rpx;
+  border-radius: 30rpx;
+  /* box-shadow:5rpx 5rpx 5rpx 5rpx aliceblue; */
+  z-index: 20;
+  position: relative;
+}
+
+.logo{
+  width: 200rpx;
+  height: 200rpx;
+  overflow: hidden;
+  border-radius: 100%;
+  border: 10rpx rgb(204, 203, 203);
+  margin-left: 40rpx;
+  opacity: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.title{
+  font-size: 50rpx;
+  color: #446644;
+  font-weight: 900;
+  margin-left: 10%;
+}
+
+.titleDetail{
+  margin-left: 10%;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  color: #5F8F5F;
+}
+
+.userBox{
+  width: 90%;
+  margin-left: 10%;
+  height: 500rpx;
+}
+
+.idBox{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #EBF1EB;
+  /* border: 1rpx solid #99BB99; */
+  border-radius: 20rpx;
+  margin-bottom: 20rpx;
+  padding: 20rpx;
+  font-size: 28rpx;
+}
+
+.idBox1{
+  margin-right: 50rpx;
+  padding: 10rpx;
+  border-radius: 20rpx;
+  align-items: center;
+  justify-content: center;
+}
+
+.idBox1Active{
+  /* background-color: #B8CFB8; */
+  background-color: #ffffff;
+}
+
+.idBox image{
+  width: 70rpx;
+  height: 70rpx;
+}
+
+.inputBox{
+  background-color: #EBF1EB;
+  /* border: 1rpx solid #99BB99; */
+  border-radius: 20rpx;
+  padding: 10rpx;
+  margin-bottom: 10rpx;
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+  opacity: 0.9;
+}
+
+.input{
+  width: 78%;
+  padding: 10rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+  /* border: 1rpx solid rgb(224, 219, 219); */
+}
+
+.text{
+  margin-top: 10rpx;
+  width: 22%;
+  text-align: center;
+  line-height: 45rpx;
+  font-size: 28rpx;
+}
+
+.getinto{
+  /* border-radius: 100%; */
+  width: 110rpx;
+  height: 110rpx;
+  margin-top: 40rpx;
+  margin-left: 40%;
+  /* background-color: #99BB99; */
+  opacity: 1;
+}

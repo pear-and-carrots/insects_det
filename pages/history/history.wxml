@@ -1,0 +1,11 @@
+<view class="notice">注:最多存储100条数据</view>
+<navigator url="../listDetail/listDetail?Ishistory=true&pestId={{item.pestId}}" wx:for="{{list}}" wx:key="index"
+  class="library">
+  <!-- <image class="libImg" src="{{imgUrl}}"></image> -->
+  <image class="libImg" src="{{item.picture.length === null?imgUrl:item.picture}}"></image>
+  <view class="libminiBox" data-id="{{item.id}}" data-pestId="{{item.pestId}}" data-page="{{page}}"
+    bindtap="getIntoDeatil">
+    <view class="libText">{{item.pestName}}</view>
+    <view class="libArea">{{item.distribution}}</view>
+  </view>
+</navigator>

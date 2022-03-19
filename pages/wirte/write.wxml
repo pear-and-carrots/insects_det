@@ -1,0 +1,155 @@
+<view class="header">
+  <view wx:for="{{header}}" data-id="{{item.id}}" bindtap="bindheader" class="headerItem{{page == index?'Active':''}}">
+    {{item.name}}</view>
+</view>
+
+<block wx:if="{{page == 0}}">
+  <view class="mine-list major">
+    <view class="input-block tap-list">
+      <view class="major-list" catchtap="viewCases">
+        <view class="major-item" wx:for="{{signList}}" wx:key="index" wx:if="{{item.active}}">
+          {{item.name}}</view>
+        <view class="noSign" wx:if="{{sign.length == 0}}">添加标签</view>
+      </view>
+      <view class="more" catchtap="viewCases">
+        <image src="cloud://lepidopter-0g4j22528dbb9f25.6c65-lepidopter-0g4j22528dbb9f25-1305965341/icon/右.png"></image>
+      </view>
+    </view>
+  </view>
+  <input class="input" bindtap="getUserProfile" placeholder="作者：{{author}}" disabled />
+  <input class="input" bindinput="bindTitle" placeholder="文章标题" />
+  <view class="editor">
+    <view class="toolbar" catchtouchend="format">
+      <i class="iconfont icon-zitijiacu {{formats.bold ? 'ql-active' : ''}}" data-name="bold"></i>
+      <i class="iconfont icon-zitixieti {{formats.italic ? 'ql-active' : ''}}" data-name="italic"></i>
+      <i class="iconfont icon-zitixiahuaxian {{formats.underline ? 'ql-active' : ''}}" data-name="underline"></i>
+      <i class="iconfont icon-zitishanchuxian {{formats.strike ? 'ql-active' : ''}}" data-name="strike"></i>
+      <i class="iconfont icon-zuoduiqi {{formats.align === 'left' ? 'ql-active' : ''}}" data-name="align"
+        data-value="left"></i>
+      <i class="iconfont icon-juzhongduiqi {{formats.align === 'center' ? 'ql-active' : ''}}" data-name="align"
+        data-value="center"></i>
+      <i class="iconfont icon-youduiqi {{formats.align === 'right' ? 'ql-active' : ''}}" data-name="align"
+        data-value="right"></i>
+      <i class="iconfont icon-zuoyouduiqi {{formats.align === 'justify' ? 'ql-active' : ''}}" data-name="align"
+        data-value="justify"></i>
+      <i class="iconfont icon-line-height {{formats.lineHeight ? 'ql-active' : ''}}" data-name="lineHeight"
+        data-value="2"></i>
+      <i class="iconfont icon-Character-Spacing {{formats.letterSpacing ? 'ql-active' : ''}}" data-name="letterSpacing"
+        data-value="2em"></i>
+      <i class="iconfont icon-722bianjiqi_duanqianju {{formats.marginTop ? 'ql-active' : ''}}" data-name="marginTop"
+        data-value="20px"></i>
+      <i class="iconfont icon-723bianjiqi_duanhouju {{formats.micon-previewarginBottom ? 'ql-active' : ''}}"
+        data-name="marginBottom" data-value="20px"></i>
+      <i class="iconfont icon-clearedformat" bindtap="removeFormat"></i>
+      <i class="iconfont icon-font {{formats.fontFamily ? 'ql-active' : ''}}" data-name="fontFamily"
+        data-value="Pacifico"></i>
+      <i class="iconfont icon-fontsize {{formats.fontSize === '24px' ? 'ql-active' : ''}}" data-name="fontSize"
+        data-value="24px"></i>
+      <i class="iconfont icon-text_color {{formats.color === '#0000ff' ? 'ql-active' : ''}}" data-name="color"
+        data-value="#0000ff"></i>
+      <i class="iconfont icon-fontbgcolor {{formats.backgroundColor === '#00ff00' ? 'ql-active' : ''}}"
+        data-name="backgroundColor" data-value="#00ff00"></i>
+      <i class="iconfont icon-date" bindtap="insertDate"></i>
+      <i class="iconfont icon--checklist" data-name="list" data-value="check"></i>
+      <i class="iconfont icon-youxupailie {{formats.list === 'ordered' ? 'ql-active' : ''}}" data-name="list"
+        data-value="ordered"></i>
+      <i class="iconfont icon-wuxupailie {{formats.list === 'bullet' ? 'ql-active' : ''}}" data-name="list"
+        data-value="bullet"></i>
+      <i class="iconfont icon-undo" bindtap="undo"></i>
+      <i class="iconfont icon-redo" bindtap="redo"></i>
+      <i class="iconfont icon-outdent" data-name="indent" data-value="-1"></i>
+      <i class="iconfont icon-indent" data-name="indent" data-value="+1"></i>
+      <i class="iconfont icon-fengexian" bindtap="insertDivider"></i>
+      <i class="iconfont icon-format-header-1 {{formats.header === 1 ? 'ql-active' : ''}}" data-name="header"
+        data-value="{{1}}"></i>
+      <i class="iconfont icon-format-header-2 {{formats.header === 2 ? 'ql-active' : ''}}" data-name="header"
+        data-value="{{2}}"></i>
+      <i class="iconfont icon-format-header-3 {{formats.header === 3 ? 'ql-active' : ''}}" data-name="header"
+        data-value="{{3}}"></i>
+      <i class="iconfont icon-format-header-4 {{formats.header === 4 ? 'ql-active' : ''}}" data-name="header"
+        data-value="{{4}}"></i>
+      <i class="iconfont icon-zitixiabiao {{formats.script === 'sub' ? 'ql-active' : ''}}" data-name="script"
+        data-value="sub"></i>
+      <i class="iconfont icon-zitishangbiao {{formats.script === 'super' ? 'ql-active' : ''}}" data-name="script"
+        data-value="super"></i>
+      <i class="iconfont icon-quanping"></i>
+      <i class="iconfont icon-shanchu" bindtap="clear"></i>
+      <i class="iconfont icon-direction-rtl {{formats.direction === 'rtl' ? 'ql-active' : ''}}" data-name="direction"
+        data-value="rtl"></i>
+    </view>
+    <view class="contaner">
+      <editor id="editor" class="ql-container" placeholder="{{placeholder}}" bindstatuschange="onStatusChange"
+        bindready="onEditorReady" bindinput='bindinput'>
+      </editor>
+    </view>
+  </view>
+  <button class="btn" bindtap="goplay">提交</button>
+</block>
+
+<block wx:if="{{page == 1}}">
+  <view class="circleList">
+    <view class="list1" bindtap="bindList" wx:for="{{list1}}" data-articleId="{{item.articleId}}">
+      <view class="circleTitle">{{item.title}}</view>
+      <view class="middleBox">
+        <view class="leftBox">
+          <view class="auBox">
+            <image src="{{item.authorImg}}"></image>
+            <view class="author">{{item.author}}</view>
+          </view>
+          <rich-text class="dec" nodes="{{item.dec}}"></rich-text>
+        </view>
+        <image class="detailImg" src="{{item.detailImg}}"></image>
+      </view>
+      <view class="bottomBox">
+        <text>{{item.look}}人浏览 | {{item.collect}}人收藏</text>
+        <!-- <view class="collect">
+        收藏
+        <image src="../../images/收藏 (1).png"></image>
+        </view> -->
+      </view>
+    </view>
+  </view>
+
+  <view class="noneBox" wx:if="{{Zlist.length == 0}}">
+    <image src="cloud://lepidopter-0g4j22528dbb9f25.6c65-lepidopter-0g4j22528dbb9f25-1305965341/文章内容缺省页.png"></image>
+    <view class="none">- 暂无更多内容 -</view>
+  </view>
+</block>
+
+<block wx:if="{{page == 2}}">
+  <view class="listBox" wx:for="{{list}}">
+    <view class="list">
+      <view class="detailBox">
+        <view>文章《{{item.title}}》</view>
+        <view class="startTime">{{item.startTime}}</view>
+      </view>
+      <view class="status">{{item.status}}</view>
+    </view>
+  </view>
+  <view class="noneBox" wx:if="{{list.length == 0}}">
+    <image src="cloud://lepidopter-0g4j22528dbb9f25.6c65-lepidopter-0g4j22528dbb9f25-1305965341/文章内容缺省页.png"></image>
+    <view class="none">- 暂无更多消息 -</view>
+  </view>
+</block>
+
+<!-- 选择专业领域蒙版图 -->
+<view class="popup-wrap" wx:if="{{signShow}}">
+  <view class="popup-bg" catchtap="viewCases"></view>
+  <view class="popup check-result-box major">
+    <view class="popup-tit">
+      <text>文章标签</text>
+      <image src="cloud://lepidopter-0g4j22528dbb9f25.6c65-lepidopter-0g4j22528dbb9f25-1305965341/icon/关闭.png"
+        catchtap="viewCases"></image>
+    </view>
+    <view class="major-list">
+      <view data-id="{{item.id}}" bindtap="actionActive" class="major-item {{item.active?'active':''}}"
+        wx:for="{{signList}}" wx:key="index">{{item.name}}</view>
+      <input class="major-item-input" bindinput="bindSign" focus value="{{placeholder}}" placeholder="标签" type="text" />
+      <view class="major-item-input" style="background-color: rgb(225, 241, 255);color:#000" bindtap="sureSign">
+        <image style="width:50rpx;height:50rpx"
+          src="cloud://lepidopter-0g4j22528dbb9f25.6c65-lepidopter-0g4j22528dbb9f25-1305965341/icon/确定.png"></image>
+        确定
+      </view>
+    </view>
+  </view>
+</view>

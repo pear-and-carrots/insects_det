@@ -1,0 +1,25 @@
+<view class="listBox">
+
+  <view wx:if="{{imgUrls == 0}}" class="nullImg">- 暂无图片 -</view>
+  <swiper indicator-dots autoplay circular class="swiper" wx:if="{{imgUrls != 0}}">
+    <block wx:for="{{imgUrls}}" wx:index="{{index}}">
+      <swiper-item style="border-radius: 20rpx;" wx:index="{{index}}">
+        <image class="swImg" mode="widthFix" src="{{item}}" bindtap='previewImg'></image>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <view wx:for="{{list}}" class="listDetail">
+    <view style="font-size:40rpx;font-weight:700;color:#669966;margin-bottom:20rpx">信息卡片</view>
+    <view class="ld" style="font-weight:600;font-size:30rpx">名字：{{item.pestName}}</view>
+    <view class="ld">拉丁学名：{{item.latinName}}</view>
+    <view class="ld">目：{{item.orderName}}</view>
+    <view class="ld">科：{{item.sectionName}}</view>
+    <view class="ld">属：{{item.genusName}}</view>
+    <view class="ld">常驻植物：{{item.residence}}</view>
+    <view class="ld">分布区域：{{item.distribution}}</view>
+    <view class="ld">防治建议：<text wx:if="{{item.suggestion != null}}">{{item.suggestion}}</text>
+    <text wx:if="{{item.suggestion == null}}">暂无更多建议噢~</text>
+    </view>
+  </view>
+</view>

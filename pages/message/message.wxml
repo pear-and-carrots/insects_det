@@ -1,0 +1,6 @@
+<!-- <image class="img" bindtap="return" src="cloud://lepidopter-0g4j22528dbb9f25.6c65-lepidopter-0g4j22528dbb9f25-1305965341/icon/返回 (2).png"></image> -->
+<view class="messageBox">
+<textarea class="textarea" bindinput="textarea" placeholder="请写下您宝贵的意见">
+</textarea>
+</view>
+<button bindtap="button" class="button">提交</button>

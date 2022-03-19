@@ -1,0 +1,9 @@
+<view wx:if="{{loading}}" class='wx-toast-box' style="z-index:{{level_box}}" animation="{{animationData}}">
+
+  <view class="ajaxloader3">
+    <view class="outer"></view>
+    <view class="inner"></view>
+    <view class="title">疯狂加载中</view>
+    <view wx:if="{{stop == true}}" class="stop" bindtap="stop">稍后再试</view>
+  </view>
+</view>

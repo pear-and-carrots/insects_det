@@ -1,0 +1,126 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/message/message",
+          "pathName": "pages/message/message",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/recognition/recognition",
+          "pathName": "pages/recognition/recognition",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/administration/administration",
+          "pathName": "pages/administration/administration",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/login/login",
+          "pathName": "pages/login/login",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "components/loading/loading",
+          "pathName": "components/loading/loading",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/about/about",
+          "pathName": "pages/about/about",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/list/list",
+          "pathName": "pages/list/list",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "components/cropper/cropper",
+          "pathName": "components/cropper/cropper",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/search/search",
+          "pathName": "pages/search/search",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/about/about",
+          "pathName": "pages/about/about",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/detail/detail",
+          "pathName": "pages/detail/detail",
+          "query": "id=177&pestId=C15204005378&page=11",
+          "scene": null
+        },
+        {
+          "name": "pages/canvas/canvas",
+          "pathName": "pages/canvas/canvas",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "components/canvas/canvas",
+          "pathName": "components/canvas/canvas",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/history/history",
+          "pathName": "pages/history/history",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/wirte/write",
+          "pathName": "pages/wirte/write",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/news/news",
+          "pathName": "pages/news/news",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/collect/collect",
+          "pathName": "pages/collect/collect",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "components/firefly/firefly",
+          "pathName": "components/firefly/firefly",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

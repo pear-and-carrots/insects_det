@@ -1,0 +1,22 @@
+<view class="circleList">
+  <view class="list" bindtap="bindList" data-articleId="{{item.articleId}}" wx:for="{{list}}">
+    <view class="circleTitle">{{item.title}}</view>
+    <view class="middleBox">
+      <view class="leftBox">
+        <view class="auBox">
+          <image src="{{item.portrait}}"></image>
+          <view class="author">{{item.userName}}</view>
+        </view>
+        <rich-text class="dec" nodes="{{item.content}}"></rich-text>
+      </view>
+      <image class="detailImg" src="../../images/newImg.png"></image>
+    </view>
+    <view class="bottomBox">
+      <text>{{item.reading}}人浏览 | {{item.collect}}人收藏</text>
+    </view>
+  </view>
+  <view class="noneBox" wx:if="{{list.length == 0}}">
+    <image src="cloud://lepidopter-0g4j22528dbb9f25.6c65-lepidopter-0g4j22528dbb9f25-1305965341/文章内容缺省页.png"></image>
+    <view class="none">- 暂无更多内容 -</view>
+  </view>
+</view>

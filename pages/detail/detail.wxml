@@ -1,0 +1,110 @@
+<view class="nBox">
+  <navigator url="../administration/administration" class="return">
+    <image src="cloud://lepidopter-0g4j22528dbb9f25.6c65-lepidopter-0g4j22528dbb9f25-1305965341/icon/沟通页_左箭头_返回.png" />
+    <view style="margin-left:10rpx;margin-right:10rpx">返回</view>
+  </navigator>
+  <view bindtap="deleteMessage" class="message">
+    <view style="margin-right:15rpx;margin-right:10rpx">删除</view>
+    <image src="cloud://lepidopter-0g4j22528dbb9f25.6c65-lepidopter-0g4j22528dbb9f25-1305965341/icon/删除 (2).png" />
+  </view>
+</view>
+
+<block wx:if="{{repairImgBox != true}}">
+  <view class="listBox">
+
+    <view class="nullimgBox">
+      <view wx:if="{{imgUrls == 0}}" class="nullImg">- 暂无图片 -</view>
+      <view wx:if="{{imgUrls == 0}}" class="setImgText" bindtap="repairImg">上传图片</view>
+    </view>
+    <view wx:if="{{imgUrls != 0}}" class="repairImgText" bindtap="repairImg">修改图片</view>
+    <swiper indicator-dots autoplay circular class="swiper" wx:if="{{imgUrls != 0}}">
+      <block wx:for="{{imgUrls}}" wx:index="{{index}}">
+        <swiper-item style="border-radius: 20rpx;">
+          <image class="swImg" mode="widthFix" src="{{item}}"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+
+    <view wx:for="{{list}}" wx:if="{{item.id == id && name == 1}}" class="listDetail">
+      <view style="font-size:40rpx;font-weight:700;color:#669966;margin-bottom:20rpx">信息卡片
+        <view class="repair"><text data-id="{{item.id}}" bindtap="repair">修改信息</text></view>
+      </view>
+      <view class="ld" style="font-weight:600;font-size:30rpx">名字：{{item.pestName}}</view>
+      <view class="ld">拉丁学名：{{item.latinName}}</view>
+      <view class="ld">目：{{item.orderName}}</view>
+      <view class="ld">科：{{item.sectionName}}</view>
+      <view class="ld">属：{{item.genusName}}</view>
+      <view class="ld">常驻植物：{{item.residence}}</view>
+      <view class="ld">分布区域：{{item.distribution}}</view>
+    </view>
+
+    <form bindsubmit="submit">
+      <view wx:for="{{list1}}" wx:if="{{item.id == id &&name == 2}}" class="listDetail">
+        <view style="font-size:40rpx;font-weight:700;color:#669966;margin-bottom:20rpx">信息卡片
+          <view class="repair">
+            <text wx:if="{{name == 1}}" data-id="{{item.id}}" bindtap="repair">修改信息</text>
+            <text style="background-color:rgb(250, 228, 228);box-shadow: 1rpx 1rpx 1rpx 1rpx rgb(250, 138, 138);"
+              wx:if="{{name == 2}}" data-id="{{item.id}}" bindtap="upRepair">取消修改</text>
+          </view>
+        </view>
+        <view class="ld" style="font-weight:600;font-size:30rpx">名字：
+          <input name="pestName" value="{{item.pestName}}" placeholder="请输入修改后的内容" />
+        </view>
+        <view class="ld">拉丁学名：
+          <input name="latinName" value="{{item.latinName}}" placeholder="请输入修改后的内容" />
+        </view>
+        <view class="ld">目：
+          <input name="orderName" value="{{item.orderName}}" placeholder="请输入修改后的内容" />
+        </view>
+        <view class="ld">科：
+          <input name="sectionName" value="{{item.sectionName}}" placeholder="请输入修改后的内容" />
+        </view>
+        <view class="ld">属：
+          <input name="genusName" value="{{item.genusName}}" placeholder="请输入修改后的内容" />
+        </view>
+        <view class="ld">常驻植物：
+          <input name="residence" value="{{item.residence}}" placeholder="请输入修改后的内容" />
+        </view>
+        <view class="ld">分布区域：
+          <input name="distribution" value="{{item.distribution}}" placeholder="请输入修改后的内容" />
+        </view>
+
+        <button class="button" size="mini" form-type="submit">提交</button>
+
+      </view>
+    </form>
+  </view>
+</block>
+
+<view class="repairImgBox" wx:if="{{repairImgBox == true}}">
+<text>昆虫样图</text>
+  <view class="close" bindtap="close">X</view>
+  <view class="inputBox">
+    <view class="images_box">
+      <block wx:key="imgbox" wx:for="{{samples}}">
+        <view class="imgBox">
+          <view class="img-box">
+            <image data-index="{{index}}" class="img" src='{{item.picUrl}}' bindtap="previewImg"
+              bindlongpress="imgDelete1">
+            </image>
+          </view>
+          <view class="btnBox">
+            <view data-id="{{item.id}}" class="btnText" bindtap="dImg">删除</view>
+            <view data-id="{{item.id}}" class="btnText" bindtap="rImg" style="background-color:rgb(236, 169, 82);margin-top:100rpx">更换
+            </view>
+          </view>
+        </view>
+      </block>
+      <view class="imgBox" bindtap="aImg">
+        <view class="img-box">
+          <image class="setImg"
+            src="cloud://lepidopter-0g4j22528dbb9f25.6c65-lepidopter-0g4j22528dbb9f25-1305965341/icon/图片.png"
+            mode="widthFix" />
+        </view>
+        <view class="btnBox">
+          <view class="addbtnText">添加</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

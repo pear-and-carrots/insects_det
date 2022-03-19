@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "loading":"../../components/loading/loading",
+    "cropper":"../../components/cropper/cropper",
+    "canvas":"../../components/canvas/canvas"
+  },
+  "navigationBarTitleText": "昆虫查询",
+  "navigationBarBackgroundColor": "#eff3ef"
+}

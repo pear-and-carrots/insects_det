@@ -1,0 +1,40 @@
+.listBox{
+  width: 92%;
+  margin: 4%;
+  position: relative;
+}
+
+.swiper{
+  width: 100%;
+  height:400rpx;
+  border-radius: 20rpx;
+  position: relative;
+}
+
+.swImg{
+  width: 100%;
+  border-radius: 20rpx;
+}
+
+.listDetail{
+  padding: 30rpx;
+  margin-top: 20rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+  box-shadow: 2rpx 2rpx 2rpx 2rpx #e4dac0;
+  font-size: 28rpx;
+}
+
+.ld{
+  padding: 10rpx;
+  margin-top: 10rpx;
+  border-bottom: 1rpx dotted #e4dac0;
+}
+
+.nullImg{
+  text-align: center;
+  margin: 40rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #666666;
+}

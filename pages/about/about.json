@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "loading":"../../components/loading/loading",
+    "firefly":"../../components/firefly/firefly"
+  },
+  "navigationBarTitleText": "个人",
+  "navigationStyle":"custom"
+}

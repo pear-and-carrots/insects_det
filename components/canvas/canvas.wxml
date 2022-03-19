@@ -1,0 +1,70 @@
+<view class="container">
+    <view class="left">
+        <view class="uno">
+            <view class="uno">
+                <view class="uno">
+                    <view class="uno">
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="dos">
+            <view class="dos">
+                <view class="dos">
+                    <view class="dos">
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="tres">
+            <view class="tres">
+                <view class="tres">
+                    <view class="tres">
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="cuatro">
+            <view class="cuatro">
+                <view class="cuatro">
+                    <view class="cuatro">
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="right">
+        <view class="uno">
+            <view class="uno">
+                <view class="uno">
+                    <view class="uno">
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="dos">
+            <view class="dos">
+                <view class="dos">
+                    <view class="dos">
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="tres">
+            <view class="tres">
+                <view class="tres">
+                    <view class="tres">
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="cuatro">
+            <view class="cuatro">
+                <view class="cuatro">
+                    <view class="cuatro">
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

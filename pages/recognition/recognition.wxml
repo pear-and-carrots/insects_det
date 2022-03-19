@@ -1,0 +1,91 @@
+<!-- 昆虫识别 -->
+<view class="box" wx:if="{{page == 0}}">
+  <block wx:if="{{cropper != true}}">
+    <view class="title" style="margin-left:40rpx">拍照或上传照片识别昆虫</view>
+    <image wx:if="{{show == 0}}" src="../../images/tjtp.png" class="img" bindtap="connect"></image>
+    <image wx:if="{{show == 1}}" src="{{tempFilePaths}}" class="realImg" mode="widthFix"></image>
+    <view wx:if="{{show == 1}}" class="tool">
+      <view bindtap="connect">
+        <image style="width:110rpx;height:110rpx"
+          src="cloud://lepidopter-0g4j22528dbb9f25.6c65-lepidopter-0g4j22528dbb9f25-1305965341/icon/重新上传.png"></image>
+        <view>重新上传</view>
+      </view>
+      <view bindtap="search">
+        <image style="width:110rpx;height:110rpx;"
+          src="cloud://lepidopter-0g4j22528dbb9f25.6c65-lepidopter-0g4j22528dbb9f25-1305965341/icon/放大镜.png">
+        </image>
+        <view>查询昆虫</view>
+      </view>
+    </view>
+  </block>
+  <view class='body' style="height:{{wxheight}}px" wx:if="{{cropper == true}}">
+
+    <cropper id='cropper' class='stage'></cropper>
+
+    <view class='bar'>
+      <view class='btn btn-cancel ripple' bindtap='fnCancel'>取消</view>
+      <view class='btn btn-submit ripple' bindtap='fnSubmit'>确定</view>
+    </view>
+
+  </view>
+</view>
+
+<!-- 查询结果 -->
+<view wx:if="{{page == 1}}">
+  <view class="listBox">
+    <view class="searchBox" bindtap="reSearch">
+      <image class="searchImg"
+        src="cloud://lepidopter-0g4j22528dbb9f25.6c65-lepidopter-0g4j22528dbb9f25-1305965341/icon/放大镜.png"></image>
+      <view>再次查询</view>
+    </view>
+
+    <view style="color:#666666;font-size:26rpx;margin-top:-30rpx">本次共识别到了图中共有{{messages.length}}种昆虫</view>
+    <view class="title">查询结果</view>
+    <view wx:if="{{look == false}}" bindtap="lookPicture1" class="lookText">点击查看图片分析</view>
+    <view wx:if="{{look == true}}" bindtap="lookPicture3" class="lookText">点击收起图片分析</view>
+    <view class="lookPictureBox">
+      <image mode="widthFix" wx:if="{{look == true}}" src="{{lookPicture}}" bindtap="lookPicture2"></image>
+    </view>
+    <!-- 昆虫栏 -->
+    <view class="head">
+      <!-- <view class="headtext">昆虫栏</view> -->
+      <view class="head_item {{dex == index?'head_itemActive':''}}" wx:for="{{array}}" data-dex="{{index}}"
+        bindtap="selected">{{item}}</view>
+    </view>
+
+    <swiper wx:if="{{objimg != 0}}" indicator-dots autoplay circular class="swiper">
+      <block wx:for="{{imgUrls}}" wx:index="{{index}}">
+        <swiper-item style="border-radius: 20rpx;">
+          <image class="swImg" src="{{item}}" bindtap='previewImg' bindlongtap="seaveImg"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+
+    <view class="listDetail" wx:for="{{labels}}">
+      <view class="pBox">
+        <view style="font-size:40rpx;font-weight:700;color:#669966;margin-bottom:10rpx">信息卡片</view>
+        <!-- 相似度进度条 -->
+        <view class="pvBox">
+          <progress class="progress" stroke-width="20" backgroundColor="#666666" activeColor="#5f8b0c"
+            border-radius="100" show-info percent="{{probability}}" active />
+          <view class="ptext">置信度</view>
+        </view>
+      </view>
+      <view class="ld" style="font-weight:600;font-size:30rpx">名字：{{item.pestName}} <text
+          style="color:#666666;font-size:25rpx;font-weight:500">(识别出图上共有{{message.number}}只{{item.pestName}})</text>
+      </view>
+      <view class="ld">目：{{item.orderName}}</view>
+      <view class="ld">科：{{item.sectionName}}</view>
+      <view class="ld">属：{{item.genusName}}</view>
+      <view class="ld">拉丁学名：{{item.latinName}}</view>
+      <view class="ld">分布区域：{{item.distribution}}</view>
+      <view class="ld">喜居的树：{{item.residence}}</view>
+    </view>
+  </view>
+
+</view>
+
+<!-- <view bindtap="text">测试</view> -->
+<loading wx:if="{{loading}}" stop="{{stop}}"></loading>
+<canvas wx:if="{{show == 0}}" class="canvas"></canvas>
+

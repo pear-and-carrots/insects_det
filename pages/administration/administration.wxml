@@ -1,0 +1,130 @@
+<!-- <picker mode="multiSelector" value="{{index}}" range="{{orders.orderName}}" bindchange="orders" bindcolumnchange="orders">
+  hukjgh
+</picker>
+
+<view class="section">
+  <view class="section__title">普通选择器</view>
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker">
+      当前选择：{{array[index]}}
+    </view>
+  </picker>
+</view>
+<view class="section">
+  <view class="section__title">多列选择器</view>
+  <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{orders}}">
+    <view class="picker">
+      当前选择：{{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}，{{multiArray[2][multiIndex[2]]}}
+    </view>
+  </picker>
+</view> -->
+<!-- 1.顶部导航 -->
+<navigator url="../login/login" class="return">
+  <image src="cloud://lepidopter-0g4j22528dbb9f25.6c65-lepidopter-0g4j22528dbb9f25-1305965341/icon/退出登录.png" />
+  <view>退出登录</view>
+</navigator>
+<view class="head">
+  <view class="head_item {{dex == index?'head_itemActive':''}}" wx:for="{{array}}" data-dex="{{index}}"
+    bindtap="selected">{{item}}</view>
+</view>
+
+<!-- 2.昆虫库 -->
+<view class="box" wx:if="{{dex == 0}}">
+  <view wx:for="{{list}}" wx:key="index" class="library">
+    <image class="libImg" src="{{item.picture}}"></image>
+    <view class="libminiBox" data-id="{{item.id}}" data-pestId="{{item.pestId}}" data-page="{{page}}"
+      bindtap="getIntoDeatil">
+      <view class="libText">{{item.pestName}}</view>
+      <view class="libArea">{{item.distribution}}</view>
+    </view>
+  </view>
+
+<view class="tt">
+  <view class="pagebut">
+    <image bindtap="last"
+      src="cloud://lepidopter-0g4j22528dbb9f25.6c65-lepidopter-0g4j22528dbb9f25-1305965341/icon/上一页.png"></image>
+    第<input class="inputPage" value="{{page}}" type="number" bindinput="inputPage" />页
+    <image bindtap="next"
+      src="cloud://lepidopter-0g4j22528dbb9f25.6c65-lepidopter-0g4j22528dbb9f25-1305965341/icon/下一页.png"></image>
+  </view>
+  <view class="allpages">共{{callpages}}页</view>
+  <view class="tiao" bindtap="tiao">跳转</view>
+  </view>
+  <!-- <picker mode="multiSelector" value="{{pickerIndex}}" range-key="{{orderName}}" range="{{orders}}" bindchange="orders"
+    bindcolumnchange="orders">
+    {{orders[index].orderName}}
+  </picker> -->
+
+</view>
+
+<!-- 3.添加库 -->
+<view class="box" wx:if="{{dex == 1}}">
+  <form style="margin:20rpx" bindsubmit="submitForm" bindreset="resetForm">
+    <view class="inputBox"><text decode="emsp">&emsp;&emsp;&emsp;</text>目：<input class="input" auto-focus
+        name="orderName" placeholder="输入昆虫的目：" /></view>
+    <view class="inputBox"><text decode="emsp">&emsp;&emsp;&emsp;</text>科：<input class="input" name="sectionName"
+        placeholder="输入昆虫的科：" /></view>
+    <view class="inputBox"><text decode="emsp">&emsp;&emsp;&emsp;</text>属：<input class="input" name="genusName"
+        placeholder="输入昆虫的属：" /></view>
+    <view class="inputBox"><text decode="emsp">&emsp;&emsp;</text>名字：<input class="input" name="pestName"
+        placeholder="输入昆虫名称：" /></view>
+    <view class="inputBox">拉丁学名：<input class="input" name="latinName" placeholder="输入昆虫的拉丁学名：" /></view>
+    <view class="inputBox">分布区域：<input class="input" name="distribution" placeholder="输入昆虫的分布区域：" /></view>
+    <view class="inputBox">喜居的树：<input class="input" name="residence" placeholder="输入昆虫喜居的树：" /></view>
+    <view class="inputBox"><text>昆虫样图：
+        <text style="color:#666666;font-size:26rpx">(点击图片查看)
+          (长按图片删除)</text></text>
+      <view class="images_box">
+        <block wx:key="imgbox" wx:for="{{imgbox}}">
+          <view class="img-box">
+            <image data-index="{{index}}" class="img" src='{{item}}' bindtap="previewImg" bindlongpress="imgDelete1">
+            </image>
+          </view>
+        </block>
+        <view bindtap="addPic1" wx:if="{{imgbox.length<9}}">
+          <image class="setImg"
+            src="cloud://lepidopter-0g4j22528dbb9f25.6c65-lepidopter-0g4j22528dbb9f25-1305965341/icon/图片.png"
+            mode="widthFix" />
+        </view>
+      </view>
+    </view>
+
+    <view class="btn">
+      <button class="button" form-type="submit" loading="{{isloading}}" hover-class="btn-active"
+        bindtap="getsubload">上传</button>
+    </view>
+  </form>
+
+</view>
+
+<!-- 意见箱 -->
+<view class="box" wx:if="{{dex == 2}}">
+  <view class="stuList" wx:for="{{message}}" wx:key="index" data-id="{{item.id}}" data-message="{{item.suggestion}}"
+    bindtap="stuList">
+    <image src="../../images/message.png" mode="widthFix"></image>
+    <view class="textareaText">{{item.suggestion}}</view>
+  </view>
+
+  <view class="tt">
+  <view class="pagebut">
+    <image bindtap="lastPage"
+      src="cloud://lepidopter-0g4j22528dbb9f25.6c65-lepidopter-0g4j22528dbb9f25-1305965341/icon/上一页.png"></image>
+    第<input class="inputPage" value="{{page1}}" type="number" bindinput="inputPage1" />页
+    <image bindtap="nextPage"
+      src="cloud://lepidopter-0g4j22528dbb9f25.6c65-lepidopter-0g4j22528dbb9f25-1305965341/icon/下一页.png"></image>
+  </view>
+  <view class="allpages">共{{mallpages}}页</view>
+  <view class="tiao" bindtap="tiao1">跳转</view>
+  </view>
+</view>
+
+<!-- 意见箱蒙版 -->
+<view class="modalDlg" wx:if="{{showModal1 == true}}">
+  <view class="buttonBox">
+    <view data-id="{{item.id}}" class="reduce" bindtap="removamessage">删除</view>
+    <view class='close_mask' bindtap="close_mask">x</view>
+  </view>
+  <view class="mbox">{{msg}}</view>
+</view>
+
+<view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal1}}"></view>

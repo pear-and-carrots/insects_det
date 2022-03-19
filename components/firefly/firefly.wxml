@@ -1,0 +1,14 @@
+<view class="checkbox-wrap" bindtap="checkboxChange">
+        <view class="abdomen{{isLight == true?'Active':''}}">
+            <view class="thorax">
+                <view class="head">
+                    <view class="eyes"></view>
+                    <view class="antennae"></view>
+                </view>
+            </view>
+            <view class="wings">
+                <view class="wing wing-a{{isLight == true?'Active':''}}"></view>
+                <view class="wing wing-b{{isLight == true?'Active':''}}"></view>
+            </view>
+        </view>
+</view>

@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "loading":"../../components/loading/loading",
+    "backTop":"../../components/backTop/backTop"
+  },
+  "navigationBarTitleText": "昆虫库",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 50
+}

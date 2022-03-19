@@ -1,0 +1,32 @@
+<image class="background" style="width:{{ScreenTotalW}}rpx;height:{{ScreenTotalH}}rpx" src="../../images/K7.jpg" mode="heightFix"></image>
+<view class="loginBox">
+</view>
+<view class="loginBox1">
+  <image src="cloud://lepidopter-0g4j22528dbb9f25.6c65-lepidopter-0g4j22528dbb9f25-1305965341/icon/src=http___pic.51yuansu.com_pic3_cover_02_45_74_59e590f4d5fa4_610.jpg&refer=http___pic.51yuansu (2).jpg" class="logo"></image>
+  <view class="title">WElCOME!</view>
+  <view class="titleDetail">欢迎使用海创昆虫识别！</view>
+  <view class="userBox">
+    <view class="idBox">
+      <view class="idtext">您的身份是：</view>
+      <view class="idBox1 {{id == 1?'idBox1Active':''}}" style="width:80rpx;padding-left:20rpx" bindtap="idBox1">
+        <image src="../../images/persons.png" style="margin-right:50rpx"></image>
+        <view style="margin-left:12rpx;font-size:25rpx">用户</view>
+      </view>
+      <view class="idBox1 {{id == 2?'idBox1Active':''}}" bindtap="idBox2">
+        <image src="../../images/management.png" style="height:80rpx;width:80rpx;margin-top:-5rpx;margin-left:10rpx">
+        </image>
+        <view style="margin-left:12rpx;font-size:25rpx">管理员</view>
+      </view>
+    </view>
+    <view wx:if="{{id == 2}}">
+      <view class="inputBox">
+        <view class="text">账号：</view><input bindinput="userName" class="input" />
+      </view>
+      <view class="inputBox">
+        <view class="text">密码：</view><input bindinput="key" class="input" />
+      </view>
+    </view>
+    <image src="cloud://lepidopter-0g4j22528dbb9f25.6c65-lepidopter-0g4j22528dbb9f25-1305965341/icon/_点箭头.png" class="getinto" bindtap="getInto"></image>
+  </view>
+</view>
+<loading wx:if="{{loading}}"></loading>

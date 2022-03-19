@@ -1,0 +1,75 @@
+<view class="headerBox">
+  <!-- 顶部导航 -->
+  <view class="header">
+    <view class="loaction">
+      <navigator hover-class="none" url="../selectCity/selectCity">{{location}}</navigator>
+    </view>
+    <view class="search">
+      <navigator url="../search/search">昆虫搜索</navigator>
+    </view>
+  </view>
+</view>
+
+<view class="tip">
+  <image src="cloud://lepidopter-0g4j22528dbb9f25.6c65-lepidopter-0g4j22528dbb9f25-1305965341/icon/tip.png"></image>
+  <swiper class="tipSwiper" autoplay vertical circular duration="1500">
+    <swiper-item wx:for="{{tipList}}">
+      <view class="tipText" data-id="{{item.id}}">{{item.text}}</view>
+    </swiper-item>
+  </swiper>
+</view>
+
+<view class="circleBox">
+  <!-- 菜单 -->
+  <view class="titleBox" wx:if="{{list.length != 0}}">
+    <image style="margin-right:20rpx;margin-left:-60rpx" mode="widthFix" src="../../images/biaoti1.jpg"></image>
+    {{fixList[showId-2].menuName}}
+    <image mode="widthFix" src="../../images/biaoti.jpg"></image>
+  </view>
+
+  <view class="none" wx:if="{{list.length == 0}}">
+    ------ 暂无更多内容 ------ 
+  </view>
+
+  <view class="fixBox" bindtap="{{ stopBtn ? 'showContent' : 'hideContent' }}"
+    style="width:{{width}}rpx;height:{{height}}rpx;transition:width 1s;-moz-transition:width 1s;-webkit-transition:width 1s;-o-transition:width 1s;">
+    <view wx:if="{{choose}}" class='companyInfo' animation='{{animationData}}'>
+      <view class="{{(showId-2) == index?'fixItmeActive':'fixItme'}}" wx:for="{{fixList}}" wx:key="index"
+        data-id="{{item.id}}" data-menuId="{{item.menuId}}" bindtap="chooseFix">{{item.menuName}}</view>
+    </view>
+    <view wx:else>
+      {{fixList[showId-2].menuName}}
+    </view>
+  </view>
+
+  <view class="circleList">
+    <view class="list" bindtap="bindList" wx:for="{{list}}" data-articleId="{{item.articleId}}">
+      <view class="circleTitle">{{item.title}}</view>
+      <view class="middleBox">
+        <view class="leftBox">
+          <view class="auBox">
+            <image src="{{item.portrait}}"></image>
+            <view class="author">{{item.userName}}</view>
+          </view>
+          <rich-text class="dec" nodes="{{item.content}}"></rich-text>
+        </view>
+        <!-- <image class="detailImg" wx:if="item.detailImg.length !== 0" src="{{item.detailImg}}"></image> -->
+        <image class="detailImg" wx:if="item.detailImg.length === 0" src="../../images/newImg.png"></image>
+      </view>
+      <view class="bottomBox">
+        <text>{{item.reading}}人浏览 | {{item.collect}}人收藏</text>
+        <!-- <view class="collect">
+        收藏
+        <image src="../../images/收藏 (1).png"></image>
+        </view> -->
+      </view>
+    </view>
+  </view>
+
+  <view class="none" wx:if="{{noneMore == true && list.length !== 0}}">
+   ------ 到底啦 ------ 
+  </view>
+</view>
+
+<loading wx:if="{{loading}}"></loading>
+<backTop wx:if="{{showBackTop}}"></backTop>

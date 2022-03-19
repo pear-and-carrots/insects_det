@@ -1,0 +1,49 @@
+page{
+  padding: 5%;
+}
+
+.notice{
+  font-size: 24rpx;
+  color: #666666;
+  text-align: center;
+  margin-bottom: 20rpx;
+  width: 90%;
+}
+
+.library {
+  width: 85%;
+  margin-bottom: 30rpx;
+  padding: 20rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+  display: flex;
+  flex-direction: row;
+  box-shadow: 1rpx 1rpx 1rpx 1rpx #c1d3a7;
+}
+
+.libImg {
+  width: 25%;
+  height: 150rpx;
+  border-radius: 10rpx;
+}
+
+.libminiBox {
+  width: 75%;
+  padding-left: 20rpx;
+}
+
+.libText {
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  font-size: 30rpx;
+}
+
+.libArea {
+  color: #666666;
+  font-size: 28rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
